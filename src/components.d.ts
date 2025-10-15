@@ -5,50 +5,119 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { SelectOption } from "./components/sd-select/sd-select";
+export { SelectOption } from "./components/sd-select/sd-select";
 export namespace Components {
     interface MyComponent {
         /**
-          * The first name
+          * label of the button
          */
-        "first": string;
+        "label": string;
+    }
+    interface SdSelect {
+        "customStyle": { [key: string]: string };
         /**
-          * The last name
+          * @default false
          */
-        "last": string;
+        "disabled": boolean;
         /**
-          * The middle name
+          * @default []
          */
-        "middle": string;
+        "options": SelectOption[];
+        /**
+          * @default '선택'
+         */
+        "placeholder": string;
+        "value": string | number;
+        /**
+          * @default '200px'
+         */
+        "width": string;
     }
 }
+export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMyComponentElement;
+}
+export interface SdSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSdSelectElement;
+}
 declare global {
+    interface HTMLMyComponentElementEventMap {
+        "clicked": void;
+    }
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMyComponentElementEventMap>(type: K, listener: (this: HTMLMyComponentElement, ev: MyComponentCustomEvent<HTMLMyComponentElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMyComponentElementEventMap>(type: K, listener: (this: HTMLMyComponentElement, ev: MyComponentCustomEvent<HTMLMyComponentElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLSdSelectElementEventMap {
+        "selectionChanged": { value: string | number; option: SelectOption };
+    }
+    interface HTMLSdSelectElement extends Components.SdSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLSdSelectElementEventMap>(type: K, listener: (this: HTMLSdSelectElement, ev: SdSelectCustomEvent<HTMLSdSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLSdSelectElementEventMap>(type: K, listener: (this: HTMLSdSelectElement, ev: SdSelectCustomEvent<HTMLSdSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLSdSelectElement: {
+        prototype: HTMLSdSelectElement;
+        new (): HTMLSdSelectElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "sd-select": HTMLSdSelectElement;
     }
 }
 declare namespace LocalJSX {
     interface MyComponent {
         /**
-          * The first name
+          * label of the button
          */
-        "first"?: string;
+        "label"?: string;
         /**
-          * The last name
+          * Emitted when the button is clicked
          */
-        "last"?: string;
+        "onClicked"?: (event: MyComponentCustomEvent<void>) => void;
+    }
+    interface SdSelect {
+        "customStyle"?: { [key: string]: string };
         /**
-          * The middle name
+          * @default false
          */
-        "middle"?: string;
+        "disabled"?: boolean;
+        "onSelectionChanged"?: (event: SdSelectCustomEvent<{ value: string | number; option: SelectOption }>) => void;
+        /**
+          * @default []
+         */
+        "options"?: SelectOption[];
+        /**
+          * @default '선택'
+         */
+        "placeholder"?: string;
+        "value"?: string | number;
+        /**
+          * @default '200px'
+         */
+        "width"?: string;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "sd-select": SdSelect;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +125,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "sd-select": LocalJSX.SdSelect & JSXBase.HTMLAttributes<HTMLSdSelectElement>;
         }
     }
 }

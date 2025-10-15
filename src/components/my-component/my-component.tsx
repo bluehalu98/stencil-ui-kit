@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -8,25 +8,26 @@ import { format } from '../../utils/utils';
 })
 export class MyComponent {
   /**
-   * The first name
+   * label of the button
    */
-  @Prop() first: string;
+  @Prop() label: string;
 
   /**
-   * The middle name
+   * Emitted when the button is clicked
    */
-  @Prop() middle: string;
-
-  /**
-   * The last name
-   */
-  @Prop() last: string;
+  @Event() clicked: EventEmitter<void>;
 
   private getText(): string {
-    return format(this.first, this.middle, this.last);
+    return format(this.label);
   }
 
+  private handleButtonClick = (): void => {
+    console.log('Button clicked! from StencilJS');
+
+    this.clicked.emit();
+  };
+
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return <button onClick={this.handleButtonClick}>{this.getText()}</button>;
   }
 }

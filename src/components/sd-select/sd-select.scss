@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  width: var(--select-width, 200px);
+  position: relative;
+}
+
+.sd-select {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  color: c(grey_90);
+  cursor: pointer;
+  user-select: none;
+
+  &__trigger {
+    background-color: c(white);
+    border: 1px solid c(grey_55);
+    border-radius: 4px;
+    padding: 4px 12px;
+
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background: c(grey_05);
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 12px;
+    height: 12px;
+    color: c(grey_65);
+    transition: transform 0.3s ease;
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: c(white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+}
