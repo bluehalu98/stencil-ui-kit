@@ -15,11 +15,19 @@ export namespace Components {
         "label": string;
     }
     interface SdSelect {
-        "customStyle": { [key: string]: string };
+        /**
+          * @default false
+         */
+        "clearable": boolean;
+        "containerStyle": { [key: string]: string };
         /**
           * @default false
          */
         "disabled": boolean;
+        "dropdownStyle": { [key: string]: string };
+        "label": string;
+        "labelStyle": { [key: string]: string };
+        "optionStyle": { [key: string]: string };
         /**
           * @default []
          */
@@ -28,6 +36,7 @@ export namespace Components {
           * @default '선택'
          */
         "placeholder": string;
+        "triggerStyle": { [key: string]: string };
         "value": string | number;
         /**
           * @default '200px'
@@ -62,7 +71,8 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLSdSelectElementEventMap {
-        "selectionChanged": { value: string | number; option: SelectOption };
+        "valueChanged": { value: string | number; option: SelectOption };
+        "dropDownShow": { isOpen: boolean };
     }
     interface HTMLSdSelectElement extends Components.SdSelect, HTMLStencilElement {
         addEventListener<K extends keyof HTMLSdSelectElementEventMap>(type: K, listener: (this: HTMLSdSelectElement, ev: SdSelectCustomEvent<HTMLSdSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -95,12 +105,21 @@ declare namespace LocalJSX {
         "onClicked"?: (event: MyComponentCustomEvent<void>) => void;
     }
     interface SdSelect {
-        "customStyle"?: { [key: string]: string };
+        /**
+          * @default false
+         */
+        "clearable"?: boolean;
+        "containerStyle"?: { [key: string]: string };
         /**
           * @default false
          */
         "disabled"?: boolean;
-        "onSelectionChanged"?: (event: SdSelectCustomEvent<{ value: string | number; option: SelectOption }>) => void;
+        "dropdownStyle"?: { [key: string]: string };
+        "label"?: string;
+        "labelStyle"?: { [key: string]: string };
+        "onDropDownShow"?: (event: SdSelectCustomEvent<{ isOpen: boolean }>) => void;
+        "onValueChanged"?: (event: SdSelectCustomEvent<{ value: string | number; option: SelectOption }>) => void;
+        "optionStyle"?: { [key: string]: string };
         /**
           * @default []
          */
@@ -109,6 +128,7 @@ declare namespace LocalJSX {
           * @default '선택'
          */
         "placeholder"?: string;
+        "triggerStyle"?: { [key: string]: string };
         "value"?: string | number;
         /**
           * @default '200px'

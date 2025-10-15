@@ -1,10 +1,13 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
-import path from 'path';
 
 export const config: Config = {
   namespace: 'stencil-ui-kit',
-  plugins: [sass({ injectGlobalPaths: [path.resolve(__dirname, 'src/assets/css/default.scss')] })],
+  plugins: [
+    sass({
+      injectGlobalPaths: ['src/assets/css/global.scss', 'src/assets/css/default.scss'],
+    }),
+  ],
   outputTargets: [
     {
       type: 'dist',

@@ -1,52 +1,119 @@
 :host {
-  display: block;
+  display: flex;
   width: var(--select-width, 200px);
   position: relative;
 }
 
 .sd-select {
+  display: flex;
+  flex-wrap: nowrap;
   width: 100%;
-  font-size: 12px;
-  font-weight: 400;
-  color: c(grey_90);
   cursor: pointer;
   user-select: none;
+  border: 1px solid c(grey_55);
+  border-radius: 4px;
+  background-color: c(white);
 
-  &__trigger {
-    background-color: c(white);
-    border: 1px solid c(grey_55);
-    border-radius: 4px;
+  &:hover:not(.sd-select--disabled) {
+    background: c(grey_10);
+  }
+
+  &.sd-select--disabled {
+    cursor: not-allowed;
+    background-color: c(grey_20);
+    border-color: c(grey_45);
+
+    .sd-select__label {
+      border-right: 1px solid c(grey_45);
+    }
+
+    .sd-select__trigger {
+      color: c(grey_65);
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    font-weight: 500;
+    color: c(grey_90);
     padding: 4px 12px;
+    border-right: 1px solid c(grey_45);
+    border-radius: 4px 0 0 4px;
+    background-color: c(grey_10);
+  }
 
+  &__container {
+    position: relative;
+    flex: 1;
     display: flex;
-    align-items: center;
 
-    &:hover {
-      background: c(grey_05);
+    .sd-select__trigger {
+      padding: 4px 20px 4px 12px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      .sd-select__value {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .sd-select__clear {
+        width: 8px;
+        height: 8px;
+      }
     }
-  }
 
-  &__arrow {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 12px;
-    height: 12px;
-    color: c(grey_65);
-    transition: transform 0.3s ease;
+    .sd-select__arrow {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 12px;
+      height: 12px;
+      color: c(grey_65);
+      transition: transform 0.3s ease;
 
-    &--open {
-      transform: rotate(180deg);
+      &--open {
+        transform: rotate(180deg);
+      }
     }
-  }
 
-  &__dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: c(white);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    .sd-select__dropdown {
+      position: absolute;
+      width: 100%;
+      top: calc(100% + 4px);
+      left: 0;
+      padding: 2px 0;
+      background-color: c(white);
+      box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      z-index: 1000;
+      overflow: hidden;
+
+      .sd-select__option {
+        padding: 4px 12px;
+        font-size: 12px;
+        line-height: 20px;
+
+        &--selected:not(:hover) {
+          color: c(brilliantblue_75);
+          font-weight: 700;
+        }
+
+        &--disabled {
+          color: c(grey_55);
+          cursor: not-allowed;
+        }
+
+        &:hover:not(.sd-select__option--disabled) {
+          background-color: c(brilliantblue_75);
+          color: c(white);
+        }
+      }
+    }
   }
 }
