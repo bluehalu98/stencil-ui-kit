@@ -43,6 +43,8 @@ export namespace Components {
          */
         "width": string;
     }
+    interface TestComponent {
+    }
 }
 export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -88,9 +90,16 @@ declare global {
         prototype: HTMLSdSelectElement;
         new (): HTMLSdSelectElement;
     };
+    interface HTMLTestComponentElement extends Components.TestComponent, HTMLStencilElement {
+    }
+    var HTMLTestComponentElement: {
+        prototype: HTMLTestComponentElement;
+        new (): HTMLTestComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "sd-select": HTMLSdSelectElement;
+        "test-component": HTMLTestComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -135,9 +144,12 @@ declare namespace LocalJSX {
          */
         "width"?: string;
     }
+    interface TestComponent {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "sd-select": SdSelect;
+        "test-component": TestComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -146,6 +158,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sd-select": LocalJSX.SdSelect & JSXBase.HTMLAttributes<HTMLSdSelectElement>;
+            "test-component": LocalJSX.TestComponent & JSXBase.HTMLAttributes<HTMLTestComponentElement>;
         }
     }
 }

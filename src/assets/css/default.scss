@@ -1,6 +1,5 @@
 @use 'sass:map';
-
-@import './variable.scss';
+@use './variable' as *;
 
 @function c($key) {
   @return map.get($colorList, $key);
