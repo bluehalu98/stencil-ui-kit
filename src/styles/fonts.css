@@ -1,0 +1,81 @@
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+ font-family: 'Pretendard';
+ font-weight: 800;
+ font-display: swap;
+ src:
+  local('Pretendard-ExtraBold'),
+  url('./fonts/Pretendard-ExtraBold.subset.woff2') format('font-woff2'),
+  url('./fonts/Pretendard-ExtraBold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+ font-family: 'Pretendard';
+ font-weight: 700;
+ font-display: swap;
+ src:
+  local('Pretendard-Bold'),
+  url('./fonts/Pretendard-Bold.subset.woff2') format('font-woff2'),
+  url('./fonts/Pretendard-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+ font-family: 'Pretendard';
+ font-weight: 600;
+ font-display: swap;
+ src:
+  local('Pretendard-SemiBold'),
+  url('./fonts/Pretendard-SemiBold.subset.woff2') format('font-woff2'),
+  url('./fonts/Pretendard-SemiBold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+ font-family: 'Pretendard';
+ font-weight: 500;
+ font-display: swap;
+ src:
+  local('Pretendard-Medium'),
+  url('./fonts/Pretendard-Medium.subset.woff2') format('font-woff2'),
+  url('./fonts/Pretendard-Medium.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+ font-family: 'Pretendard';
+ font-weight: 400;
+ font-display: swap;
+ src:
+  local('Pretendard-Regular'),
+  url('./fonts/Pretendard-Regular.subset.woff2') format('font-woff2'),
+  url('./fonts/Pretendard-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+ font-family: 'Pretendard';
+ font-weight: 300;
+ font-display: swap;
+ src:
+  local('Pretendard-Light'),
+  url('./fonts/Pretendard-Light.subset.woff2') format('font-woff2'),
+  url('./fonts/Pretendard-Light.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+:root {
+ --font-family-base: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+html {
+ font-family:
+  'Pretendard',
+  -apple-system,
+  BlinkMacSystemFont,
+  system-ui,
+  sans-serif;
+}

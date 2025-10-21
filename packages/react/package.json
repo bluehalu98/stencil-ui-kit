@@ -1,0 +1,33 @@
+{
+ "name": "@sellmate/design-system-react",
+ "version": "0.0.1",
+ "description": "Sellmate Design System - React Components",
+ "type": "module",
+ "main": "lib/index.js",
+ "module": "lib/index.js",
+ "types": "lib/index.d.ts",
+ "files": [
+  "lib/"
+ ],
+ "scripts": {
+  "build": "tsc",
+  "clean": "rm -rf lib",
+  "dev": "tsc --watch"
+ },
+ "peerDependencies": {
+  "react": ">=16.8.0",
+  "react-dom": ">=16.8.0"
+ },
+ "devDependencies": {
+  "@types/react": "^19.2.2",
+  "@types/react-dom": "^19.2.2",
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0",
+  "typescript": "^5.9.3"
+ },
+ "repository": {
+  "type": "git",
+  "url": "https://gitlab.corp.sellmate.co.kr/sellmate/frontend/design-system.git"
+ },
+ "license": "MIT"
+}

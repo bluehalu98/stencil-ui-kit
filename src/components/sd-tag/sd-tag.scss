@@ -1,0 +1,63 @@
+:host {
+ display: inline-block;
+}
+
+:host([full-width]) {
+ display: block;
+}
+
+.sd-tag {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 8px;
+ text-decoration: none;
+ border: 1px solid transparent;
+ border-radius: 4px;
+ transition: all 0.2s ease-in-out;
+ position: relative;
+ overflow: hidden;
+ white-space: nowrap;
+ user-select: none;
+ box-sizing: border-box;
+
+ &--custom-color {
+  background: var(--tag-bg-color);
+  color: var(--tag-text-color);
+ }
+
+ &--sm {
+  padding: 0 6px;
+  font-size: 11px;
+  line-height: 18px;
+  height: 20px;
+  border-radius: 4px;
+ }
+ &--md {
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  height: 24px;
+  border-radius: 4px;
+ }
+ &--lg {
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  min-height: 28px;
+  border-radius: 5px;
+ }
+ &--rounded {
+  &.sd-tag--sm {
+   border-radius: 20px;
+  }
+  &.sd-tag--md {
+   border-radius: 20px;
+  }
+  &.sd-tag--lg {
+   border-radius: 15px;
+  }
+ }
+}

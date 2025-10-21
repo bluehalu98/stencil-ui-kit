@@ -1,0 +1,23 @@
+{
+ "compilerOptions": {
+  "outDir": "./lib",
+  "declaration": true,
+  "declarationMap": true,
+  "sourceMap": true,
+  "strict": true,
+  "esModuleInterop": true,
+  "skipLibCheck": true,
+  "forceConsistentCasingInFileNames": true,
+  "moduleResolution": "bundler",
+  "target": "ES2015",
+  "module": "ESNext",
+  "lib": ["dom", "ES2015"],
+  "baseUrl": ".",
+  "paths": {
+   "@sellmate/design-system-core/loader": ["../../loader"]
+  },
+  "ignoreDeprecations": "6.0"
+ },
+ "include": ["src/**/*"],
+ "exclude": ["node_modules", "lib"]
+}
