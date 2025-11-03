@@ -1,4 +1,4 @@
-import { Component, Element, Fragment, Prop, State, h } from '@stencil/core';
+import { Component, Element, Fragment, Prop, State, Watch, h } from '@stencil/core';
 import { ButtonSize, ButtonVariant } from '../sd-button/sd-button';
 import { TooltipArrow } from '../assets/tooltipArrow';
 
@@ -35,6 +35,11 @@ export class SdPopover {
 
  @State() showPopover: boolean = false;
  @State() slotContent: string = '';
+
+ @Watch('show')
+ watchShowHandler(newValue: boolean) {
+  this.showPopover = newValue;
+ }
 
  componentWillLoad() {
   this.showPopover = this.show;
@@ -93,7 +98,7 @@ export class SdPopover {
        </i>
 
        <div class="sd-popover-menu__content">
-        <div class="sd-popover-menu__title">{this.menuTitle}</div>
+        {this.menuTitle && <div class="sd-popover-menu__title">{this.menuTitle}</div>}
 
         {this.messages.length > 0 && (
          <div class="sd-popover-menu__messages">

@@ -16,12 +16,16 @@
 | `iconSize`      | `icon-size`      |             | `number`                                                                                                                                                                  | `12`            |
 | `label`         | `label`          |             | `string`                                                                                                                                                                  | `''`            |
 | `noHover`       | `no-hover`       |             | `boolean`                                                                                                                                                                 | `true`          |
-| `placement`     | `placement`      |             | `"bottom" \| "left" \| "right" \| "top"`                                                                                                                                  | `'bottom'`      |
+| `placement`     | `placement`      |             | `"bottom" \| "left" \| "right" \| "top"`                                                                                                                                  | `'top'`         |
 | `trigger`       | `trigger`        |             | `"click" \| "hover"`                                                                                                                                                      | `'hover'`       |
 | `useClose`      | `use-close`      |             | `boolean`                                                                                                                                                                 | `false`         |
 
 
 ## Dependencies
+
+### Used by
+
+ - [sd-table](../sd-table)
 
 ### Depends on
 
@@ -36,6 +40,7 @@ graph TD;
   sd-tooltip --> sd-icon
   sd-tooltip --> sd-tooltip-portal
   sd-button --> sd-icon
+  sd-table --> sd-tooltip
   style sd-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

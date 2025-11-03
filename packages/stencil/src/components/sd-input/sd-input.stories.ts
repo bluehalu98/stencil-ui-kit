@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 
 // 빌드된 컴포넌트를 로드
-import '../../../dist/stencil-test/stencil-test.esm.js';
+import '../../../dist/design-system/design-system.esm.js';
 
 const meta: Meta = {
  title: 'Components/Input',

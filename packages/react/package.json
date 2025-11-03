@@ -1,5 +1,5 @@
 {
- "name": "@stencil-test/react",
+ "name": "@design-system/react",
  "version": "0.0.0",
  "description": "> TODO: description",
  "homepage": "",
@@ -22,7 +22,7 @@
   "dev": "tsc --watch"
  },
  "dependencies": {
-  "@stencil-test/stencil": "^0.0.1",
+  "@design-system/stencil": "^0.0.1",
   "@stencil/react-output-target": "^1.2.0"
  },
  "peerDependencies": {

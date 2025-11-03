@@ -43,6 +43,7 @@
 
 - [sd-checkbox](../sd-checkbox)
 - [sd-icon](../sd-icon)
+- [sd-tooltip](../sd-tooltip)
 - [sd-pagination](../sd-pagination)
 
 ### Graph
@@ -50,8 +51,13 @@
 graph TD;
   sd-table --> sd-checkbox
   sd-table --> sd-icon
+  sd-table --> sd-tooltip
   sd-table --> sd-pagination
   sd-checkbox --> sd-icon
+  sd-tooltip --> sd-button
+  sd-tooltip --> sd-icon
+  sd-tooltip --> sd-tooltip-portal
+  sd-button --> sd-icon
   sd-pagination --> sd-icon
   style sd-table fill:#f9f,stroke:#333,stroke-width:4px
 ```

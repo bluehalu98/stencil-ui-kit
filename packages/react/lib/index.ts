@@ -1,7 +1,11 @@
 'use strict';
 
 export * from './components/components';
-export { defineCustomElements } from '@stencil-test/stencil/loader';
+export { defineCustomElements } from '@design-system/stencil/loader';
 
 // Export sd-table types for React usage
-export type { SdTableSortDir, SdTableColumn, Row as SdTableRow } from '@stencil-test/stencil';
+export type {
+ SdTableSortDir,
+ SdTableColumn,
+ Row as SdTableRow,
+} from '@design-system/stencil';

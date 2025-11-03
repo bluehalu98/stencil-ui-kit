@@ -35,8 +35,6 @@ export class SdDatePicker {
   this.currentYear = year;
   this.currentMonth = month;
   this.currentDate = this.date;
-
-  console.log('setCalendar : ', this.currentYear, this.currentMonth, this.currentDate);
  }
 
  private openMenu() {

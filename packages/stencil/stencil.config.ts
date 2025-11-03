@@ -4,7 +4,7 @@ import { reactOutputTarget } from '@stencil/react-output-target';
 import { vueOutputTarget } from '@stencil/vue-output-target';
 
 export const config: Config = {
- namespace: 'stencil-test',
+ namespace: 'design-system',
  globalStyle: 'src/styles/global.scss',
  plugins: [
   sass({
@@ -30,11 +30,11 @@ export const config: Config = {
    serviceWorker: null, // disable service workers
   },
   reactOutputTarget({
-   stencilPackageName: '@stencil-test/stencil',
+   stencilPackageName: '@design-system/stencil',
    outDir: '../../packages/react/lib/components',
   }),
   vueOutputTarget({
-   componentCorePackage: '@stencil-test/stencil',
+   componentCorePackage: '@design-system/stencil',
    proxiesFile: '../../packages/vue/lib/components.ts',
    componentModels: [
     // vue v-model 바인딩 설정

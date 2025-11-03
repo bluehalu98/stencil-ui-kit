@@ -21,7 +21,6 @@ export class SdDateBox {
  @Event() sdMouseOver?: EventEmitter<number | string | null>;
 
  private handleClickDate() {
-  console.log(this.disabled);
   if (this.disabled) return;
   if (typeof this.date === 'string') return;
 

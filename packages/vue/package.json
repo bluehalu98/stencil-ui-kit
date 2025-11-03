@@ -1,5 +1,5 @@
 {
- "name": "@stencil-test/vue",
+ "name": "@design-system/vue",
  "version": "0.0.0",
  "description": "> TODO: description",
  "homepage": "",
@@ -26,7 +26,7 @@
   "vue": "^3.4.38"
  },
  "dependencies": {
-  "@stencil-test/stencil": "^0.0.1",
+  "@design-system/stencil": "^0.0.1",
   "@stencil/vue-output-target": "^0.11.8"
  },
  "peerDependencies": {

@@ -1,2 +1,2 @@
-export * from "./components/components";
-export { defineCustomElements } from "@stencil-test/stencil/loader";
+export * from './components/components';
+export { defineCustomElements } from '@design-system/stencil/loader';

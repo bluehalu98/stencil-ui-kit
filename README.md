@@ -5,7 +5,7 @@ Stencil을 사용한 웹 컴포넌트 라이브러리와 React/Vue 래퍼를 제
 ## 📁 프로젝트 구조
 
 ```
-stencil-test/
+design-system/
 ├── packages/
 │   ├── stencil/          # Stencil 웹 컴포넌트 (코어)
 │   ├── react/            # React 래퍼 (자동 생성)
@@ -53,19 +53,19 @@ npm run dev
 
 ## 📦 패키지 설명
 
-### @stencil-test/stencil
+### @design-system/stencil
 
 Stencil로 작성된 웹 컴포넌트 라이브러리입니다.
 - React/Vue 래퍼를 자동으로 생성합니다
 - `stencil.config.ts`에서 output target 설정
 
-### @stencil-test/react
+### @design-system/react
 
 React용 컴포넌트 래퍼입니다.
 - Stencil 빌드 시 자동 생성됩니다 (`packages/react/lib/components/`)
 - TypeScript로 타입 정의 포함
 
-### @stencil-test/vue
+### @design-system/vue
 
 Vue 3용 컴포넌트 래퍼입니다.
 - Stencil 빌드 시 자동 생성됩니다 (`packages/vue/lib/components.ts`)
@@ -76,8 +76,8 @@ Vue 3용 컴포넌트 래퍼입니다.
 ### React에서 사용
 
 ```tsx
-import { defineCustomElements } from '@stencil-test/react';
-import { SdButton, SdInput } from '@stencil-test/react';
+import { defineCustomElements } from '@design-system/react';
+import { SdButton, SdInput } from '@design-system/react';
 
 // 앱 초기화 시 한 번만 호출
 defineCustomElements();
@@ -97,7 +97,7 @@ function App() {
 ```typescript
 // main.ts
 import { createApp } from 'vue';
-import { StencilTestVuePlugin } from '@stencil-test/vue';
+import { StencilTestVuePlugin } from '@design-system/vue';
 import App from './App.vue';
 
 createApp(App)
@@ -115,7 +115,7 @@ createApp(App)
 </template>
 
 <script setup lang="ts">
-import { SdButton, SdInput } from '@stencil-test/vue';
+import { SdButton, SdInput } from '@design-system/vue';
 </script>
 ```
 

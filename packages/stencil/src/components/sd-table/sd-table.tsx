@@ -12,6 +12,7 @@ export interface SdTableColumn {
  visible?: boolean;
  usePageMoveIcon?: boolean;
  tooltip?: string[];
+ tooltipOptions?: { [key: string]: any };
 }
 
 export interface Row {
@@ -211,8 +212,13 @@ export class SdTable {
         {col.usePageMoveIcon && <sd-icon name="pageMove" size="12" color="#006AC1" />}
 
         {col.tooltip && (
+         <sd-tooltip {...col.tooltipOptions}>
+          {col.tooltip.map(text => (
+           <div>{text}</div>
+          ))}
+         </sd-tooltip>
          // TODO: sd-tooltip 추가 예정
-         <div></div>
+         //  <div></div>
         )}
        </div>
 

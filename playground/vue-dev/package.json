@@ -10,7 +10,7 @@
  },
  "dependencies": {
   "vue": "^3.5.22",
-  "@stencil-test/vue": "*"
+  "@design-system/vue": "*"
  },
  "devDependencies": {
   "@types/node": "^24.6.0",

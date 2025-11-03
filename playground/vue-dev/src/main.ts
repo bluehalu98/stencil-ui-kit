@@ -1,8 +1,6 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
-import { StencilTestVuePlugin } from '@stencil-test/vue'
+import { createApp } from 'vue';
+import './style.css';
+import App from './App.vue';
+import { StencilTestVuePlugin } from '@design-system/vue';
 
-createApp(App)
-  .use(StencilTestVuePlugin)
-  .mount('#app')
+createApp(App).use(StencilTestVuePlugin).mount('#app');

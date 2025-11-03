@@ -10,7 +10,7 @@ import {
  SdButton,
  SdInput,
  SdCheckbox,
-} from '@stencil-test/react';
+} from '@design-system/react';
 
 interface TableRow {
  id: number;
@@ -22,7 +22,14 @@ interface TableRow {
 function App() {
  const TABLE_COLUMNS: SdTableColumn[] = [
   { name: 'id', label: 'ID', field: 'id', align: 'center', width: '80px' },
-  { name: 'name', label: 'Name', field: 'name', align: 'left' },
+  {
+   name: 'name',
+   label: 'Name',
+   field: 'name',
+   align: 'left',
+   tooltip: ['Name of the person'],
+   tooltipOptions: { placement: 'top' },
+  },
   {
    name: 'age',
    label: 'Age',

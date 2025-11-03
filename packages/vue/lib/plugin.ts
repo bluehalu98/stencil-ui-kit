@@ -1,5 +1,5 @@
-import { defineCustomElements } from "@stencil-test/stencil/loader";
-import type { App } from "vue";
+import { defineCustomElements } from '@design-system/stencil/loader';
+import type { App } from 'vue';
 
 export const StencilTestVuePlugin = {
  install(_app: App) {

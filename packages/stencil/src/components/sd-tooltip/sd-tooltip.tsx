@@ -11,7 +11,7 @@ export class SdTooltip {
  @Element() el!: HTMLElement;
 
  @Prop({ reflect: true }) trigger: 'hover' | 'click' = 'hover';
- @Prop({ reflect: true }) placement: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
+ @Prop({ reflect: true }) placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
  @Prop({ reflect: true }) color: string = '#01BB4B';
 
  @Prop({ reflect: true }) icon: IconName = 'helpOutline';
