@@ -1,24 +1,31 @@
 {
  "compilerOptions": {
+  "alwaysStrict": true,
+  "strict": true,
   "allowSyntheticDefaultImports": true,
   "allowUnreachableCode": false,
-  "declaration": false,
+  "declaration": true,
   "experimentalDecorators": true,
+  "forceConsistentCasingInFileNames": true,
   "lib": ["dom", "es2022"],
-  "moduleResolution": "bundler",
   "module": "esnext",
-  "target": "es2022",
+  "moduleResolution": "bundler",
+  "noImplicitAny": true,
+  "noImplicitReturns": true,
   "noUnusedLocals": true,
   "noUnusedParameters": true,
+  "pretty": true,
+  "removeComments": false,
+  "strictPropertyInitialization": false,
+  "target": "es2022",
   "jsx": "react",
-  "jsxFactory": "h",
-  "jsxFragmentFactory": "h.Fragment",
-  "forceConsistentCasingInFileNames": true,
-  "strict": true,
-  "skipLibCheck": true,
-  "esModuleInterop": true,
-  "types": ["jest", "node"]
- },
- "include": ["src"],
- "exclude": ["node_modules"]
+  "resolveJsonModule": true,
+  "isolatedModules": true,
+  "paths": {
+   "@stencil-test/stencil": ["./packages/stencil"],
+   "@stencil-test/stencil/loader": ["./packages/stencil/loader"],
+   "@stencil-test/react": ["./packages/react/dist"],
+   "@stencil-test/vue": ["./packages/vue/dist"]
+  }
+ }
 }

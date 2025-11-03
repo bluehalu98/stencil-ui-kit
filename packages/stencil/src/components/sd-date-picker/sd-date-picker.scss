@@ -1,0 +1,81 @@
+@import '../../styles/global.scss';
+
+:host {
+ &.sd-date-picker {
+  width: 160px;
+  display: inline-block;
+ }
+}
+
+.sd-date-picker__menu {
+ position: absolute;
+ z-index: 9999;
+ width: 304px;
+ box-sizing: border-box;
+ border-radius: 8px;
+ padding: 24px 19px;
+ box-shadow: 2px 2px 12px 2px #00000033;
+ background: white;
+
+ .sd-date-picker__header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  padding: 0 5px;
+  height: 24px;
+  line-height: 24px;
+
+  .year-nav,
+  .month-nav {
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: center;
+   gap: 12px;
+
+   button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+   }
+  }
+
+  .year-nav {
+   &__current {
+    width: 40px;
+    text-align: center;
+   }
+  }
+
+  .month-nav {
+   &__current {
+    width: 100px;
+    text-align: center;
+   }
+  }
+ }
+ .sd-date-picker__days {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  column-gap: 10px;
+  padding: 0 5px;
+
+  .day {
+   width: 28px;
+   height: 20px;
+   font-size: 12px;
+   line-height: 20px;
+   text-align: center;
+   color: $grey_65;
+  }
+ }
+ .sd-date-picker__body {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+ }
+}

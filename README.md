@@ -1,105 +1,148 @@
-[![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)](https://stenciljs.com)
+# Stencil Test - Web Components Library
 
-# Stencil Component Starter
+Stencil을 사용한 웹 컴포넌트 라이브러리와 React/Vue 래퍼를 제공하는 Monorepo 프로젝트입니다.
 
-> This is a starter project for building a standalone Web Components using Stencil.
+## 📁 프로젝트 구조
 
-Stencil is a compiler for building fast web apps using Web Components.
+```
+stencil-test/
+├── packages/
+│   ├── stencil/          # Stencil 웹 컴포넌트 (코어)
+│   ├── react/            # React 래퍼 (자동 생성)
+│   └── vue/              # Vue 래퍼 (자동 생성)
+└── playground/
+    ├── react-dev/        # React 테스트 앱
+    └── vue-dev/          # Vue 테스트 앱
+```
 
-Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than runtime tool. Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements specification.
+## 🚀 시작하기
 
-Stencil components are just Web Components, so they work in any major framework or with no framework at all.
-
-## Getting Started
-
-To start building a new web component using Stencil, clone this repo to a new directory:
-
-To run:
+### 1. 의존성 설치
 
 ```bash
-yarn install
-yarn start
+npm install
 ```
 
-To build the component for production, run:
+### 2. 빌드
 
 ```bash
-yarn run build
+# 전체 빌드 (stencil → react → vue 순서)
+npm run build
+
+# 개별 빌드
+npm run build:stencil
+npm run build:react
+npm run build:vue
 ```
 
-To run the unit tests for the components, run:
+### 3. 개발 모드
 
 ```bash
-yarn test
+# Stencil 개발 서버
+cd packages/stencil
+npm start
+
+# React Playground
+cd playground/react-dev
+npm run dev
+
+# Vue Playground
+cd playground/vue-dev
+npm run dev
 ```
 
-Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
+## 📦 패키지 설명
 
-## Naming Components
+### @stencil-test/stencil
 
-When creating new component tags, we recommend _not_ using `stencil` in the component name (ex: `<stencil-datepicker>`). This is because the generated component has little to nothing to do with Stencil; it's just a web component!
+Stencil로 작성된 웹 컴포넌트 라이브러리입니다.
+- React/Vue 래퍼를 자동으로 생성합니다
+- `stencil.config.ts`에서 output target 설정
 
-Instead, use a prefix that fits your company or any name for a group of related components. For example, all of the [Ionic-generated](https://ionicframework.com/) web components use the prefix `ion`.
+### @stencil-test/react
 
-## Using this component
+React용 컴포넌트 래퍼입니다.
+- Stencil 빌드 시 자동 생성됩니다 (`packages/react/lib/components/`)
+- TypeScript로 타입 정의 포함
 
-There are two strategies we recommend for using web components built with Stencil.
+### @stencil-test/vue
 
-The first step for all two of these strategies is to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
+Vue 3용 컴포넌트 래퍼입니다.
+- Stencil 빌드 시 자동 생성됩니다 (`packages/vue/lib/components.ts`)
+- Vue 플러그인 제공
 
-You can read more about these different approaches in the [Stencil docs](https://stenciljs.com/docs/publishing).
+## 🔧 사용 방법
 
-### Lazy Loading
-
-If your Stencil project is built with the [`dist`](https://stenciljs.com/docs/distribution) output target, you can import a small bootstrap script that registers all components and allows you to load individual component scripts lazily.
-
-For example, given your Stencil project namespace is called `my-design-system`, to use `my-component` on any website, inject this into your HTML:
-
-```html
-<script type="module" src="https://unpkg.com/my-design-system"></script>
-<!--
-To avoid unpkg.com redirects to the actual file, you can also directly import:
-https://unpkg.com/foobar-design-system@0.0.1/dist/foobar-design-system/foobar-design-system.esm.js
--->
-<my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
-```
-
-This will only load the necessary scripts needed to render `<my-component />`. Once more components of this package are used, they will automatically be loaded lazily.
-
-You can also import the script as part of your `node_modules` in your applications entry file:
+### React에서 사용
 
 ```tsx
-import 'foobar-design-system/dist/foobar-design-system/foobar-design-system.esm.js';
-```
+import { defineCustomElements } from '@stencil-test/react';
+import { SdButton, SdInput } from '@stencil-test/react';
 
-Check out this [Live Demo](https://stackblitz.com/edit/vitejs-vite-y6v26a?file=src%2Fmain.tsx).
-
-### Standalone
-
-If you are using a Stencil component library with `dist-custom-elements`, we recommend importing Stencil components individually in those files where they are needed.
-
-To export Stencil components as standalone components make sure you have the [`dist-custom-elements`](https://stenciljs.com/docs/custom-elements) output target defined in your `stencil.config.ts`.
-
-For example, given you'd like to use `<my-component />` as part of a React component, you can import the component directly via:
-
-```tsx
-import 'foobar-design-system/my-component';
+// 앱 초기화 시 한 번만 호출
+defineCustomElements();
 
 function App() {
   return (
-    <>
-      <div>
-        <my-component
-          first="Stencil"
-          middle="'Don't call me a framework'"
-          last="JS"
-        ></my-component>
-      </div>
-    </>
+    <div>
+      <SdButton label="Click Me" />
+      <SdInput placeholder="Enter text" />
+    </div>
   );
 }
-
-export default App;
 ```
 
-Check out this [Live Demo](https://stackblitz.com/edit/vitejs-vite-b6zuds?file=src%2FApp.tsx).
+### Vue에서 사용
+
+```typescript
+// main.ts
+import { createApp } from 'vue';
+import { StencilTestVuePlugin } from '@stencil-test/vue';
+import App from './App.vue';
+
+createApp(App)
+  .use(StencilTestVuePlugin)
+  .mount('#app');
+```
+
+```vue
+<!-- Component.vue -->
+<template>
+  <div>
+    <SdButton label="Click Me" />
+    <SdInput placeholder="Enter text" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { SdButton, SdInput } from '@stencil-test/vue';
+</script>
+```
+
+## 📝 새 컴포넌트 추가하기
+
+1. Stencil 컴포넌트 생성:
+   ```bash
+   cd packages/stencil
+   npm run generate
+   ```
+
+2. 전체 빌드:
+   ```bash
+   npm run build
+   ```
+
+3. React/Vue 래퍼가 자동으로 생성됩니다
+
+## 🛠️ 기술 스택
+
+- **Stencil** - 웹 컴포넌트 프레임워크
+- **React 19** - React 래퍼 및 테스트
+- **Vue 3** - Vue 래퍼 및 테스트
+- **TypeScript** - 타입 안전성
+- **Lerna** - Monorepo 관리
+- **Vite** - 빌드 도구 (playground)
+
+## 📄 라이선스
+
+MIT

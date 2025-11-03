@@ -1,0 +1,116 @@
+@import '../../styles/global.scss';
+
+:host(.sd-date-box) {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 38px;
+ height: 36px;
+ font-size: 14px;
+ position: relative;
+ box-sizing: border-box;
+ text-align: center;
+ transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+ border-radius: 14px;
+
+ .sd-date-box__content {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  position: relative;
+  .sd-date-box__label {
+   position: relative;
+   z-index: 2;
+   user-select: none;
+   line-height: 28px;
+  }
+ }
+
+ &.sd-date-box--disabled {
+  color: $grey_45;
+  cursor: default !important;
+  pointer-events: none;
+ }
+
+ &:not(.sd-date-box--disabled) {
+  cursor: pointer;
+ }
+
+ &.sd-hoverable {
+  &:hover {
+   .sd-date-box__content {
+    background: $brilliantblue_25;
+   }
+  }
+ }
+
+ &.sd-date-box--in-range {
+  &:not(.sd-date-box--disabled) {
+   .sd-date-box__content {
+    &::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: -5px;
+     width: calc(100% + 10px);
+     height: 100%;
+     background: $brilliantblue_25;
+    }
+   }
+  }
+
+  &.sd-date-box--type-start {
+   .sd-date-box__content {
+    &::before {
+     left: auto !important;
+     width: 19px !important;
+     right: -5px;
+    }
+   }
+  }
+
+  &.sd-date-box--type-end {
+   .sd-date-box__content {
+    &::before {
+     width: 19px !important;
+    }
+   }
+  }
+ }
+
+ &.sd-date-box--selected,
+ &.sd-date-box--type-start,
+ &.sd-date-box--type-end {
+  .sd-date-box__content {
+   &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $brilliantblue_75;
+    border-radius: 14px;
+    z-index: 1;
+   }
+
+   .sd-date-box__label {
+    color: white;
+    font-weight: 700;
+   }
+  }
+ }
+
+ &.sd-date-box--today:not(.sd-date-box--selected) {
+  .sd-date-box__content {
+   &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    border: 1px solid $grey_30 !important;
+    border-radius: 14px;
+   }
+  }
+ }
+}

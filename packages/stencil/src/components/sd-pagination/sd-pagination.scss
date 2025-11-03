@@ -1,0 +1,88 @@
+@import '../../styles/global.scss';
+
+.sd-pagination {
+ display: flex;
+ flex-flow: row nowrap;
+ align-items: center;
+ justify-content: center;
+ gap: 8px;
+ color: $grey_80;
+ width: 100%;
+ font-size: 12px;
+
+ .prepend-btns {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 8px;
+  width: 60px;
+
+  button {
+   width: 26px;
+   height: 26px;
+   border: 0;
+   background: none;
+
+   &:hover {
+    border: 1px solid $oceanblue_70;
+    border-radius: 14px;
+   }
+  }
+ }
+
+ .append-btns {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 8px;
+  width: 60px;
+
+  button {
+   width: 26px;
+   height: 26px;
+   border: 0;
+   background: none;
+
+   &:hover {
+    border: 1px solid $oceanblue_70;
+    border-radius: 14px;
+   }
+  }
+ }
+
+ .pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 26px;
+  color: $grey_80;
+  width: var(--pagination-btn-width, 26px);
+
+  &--selected {
+   background-color: $oceanblue_70;
+   color: white;
+  }
+
+  &:hover {
+   border: 1px solid $oceanblue_70;
+  }
+ }
+
+ &--simple {
+  .pagination-info {
+   line-height: 26px;
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: center;
+   gap: 8px;
+   .current-page,
+   .last-page {
+    padding: 0 2px;
+   }
+  }
+ }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/stencil-test.esm.js"></script>
+    <script nomodule src="/build/stencil-test.js"></script>
+  </head>
+  <body style="background: grey;">
+    <sd-date-picker label="Select Date" date="2025-10-27"></sd-date-picker>
+
+    
+    
+    <div>
+      <sd-button icon="search" label="search">ssss</sd-button>  
+      <sd-button icon="search" label="search" variant="outline"></sd-button>  
+      <sd-button icon="search" label="search" variant="ghost"></sd-button>
+  
+      <sd-button icon-right="search" label="search"></sd-button>  
+      <sd-button icon-right="search" label="search" variant="outline"></sd-button>  
+      <sd-button icon-right="search" label="search" variant="ghost"></sd-button>
+  
+      <sd-button icon="search"></sd-button>  
+      <sd-button icon="search" variant="outline"></sd-button>  
+      <sd-button icon="search" variant="ghost"></sd-button>
+  
+      <sd-button icon="search" size="xs"></sd-button>  
+      <sd-button icon="search" variant="outline" size="xs"></sd-button>  
+      <sd-button icon="search" variant="ghost" size="xs"></sd-button>
+  
+      <sd-button icon="search" size="md"></sd-button>  
+      <sd-button icon="search" variant="outline" size="md"></sd-button>  
+      <sd-button icon="search" variant="ghost" size="md"></sd-button>
+  
+      <sd-button icon="search" size="lg" no-hover></sd-button>  
+      <sd-button icon="search" variant="outline" size="lg" no-hover></sd-button>  
+      <sd-button icon="search" variant="ghost" size="lg" no-hover></sd-button>
+
+    </div>
+
+    <div style="width: 100%; height: 200px; display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 100px;">
+      <sd-tooltip placement="right">
+        이것을 툴팁입니다. right
+      </sd-tooltip>
+      <sd-tooltip placement="top">이것을 툴팁입니다. top</sd-tooltip>
+      <sd-tooltip placement="bottom">이것을 툴팁입니다. bottom</sd-tooltip>
+      <sd-tooltip placement="left">이것을 툴팁입니다. left</sd-tooltip>
+
+      <sd-tooltip label="tooltip" color="#025497" icon="" placement="right" use-close trigger="click">
+        이것을 툴팁입니다. right
+
+        <div slot="bottom">
+          <sd-button label="확인" size="sm"></sd-button>
+        </div>
+      </sd-tooltip>
+    </div>
+  </body>
+</html>

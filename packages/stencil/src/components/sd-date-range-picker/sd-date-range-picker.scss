@@ -1,0 +1,94 @@
+@import '../../styles/global.scss';
+
+:host {
+ &.sd-date-range-picker {
+  width: 210px;
+  display: inline-block;
+ }
+}
+
+.sd-date-range-picker__menu {
+ width: 609px;
+ box-sizing: border-box;
+ border-radius: 8px;
+ padding: 24px 19px;
+ box-shadow: 2px 2px 12px 2px #00000033;
+ background: white;
+
+ .sd-date-range-picker__header {
+  margin-bottom: 16px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+
+  .header-label {
+   margin: 0 12px;
+   width: 40px;
+   text-align: center;
+   font-size: 14px;
+   line-height: 24px;
+  }
+ }
+ .sd-date-range-picker__body {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  gap: 19px;
+  .calendar-container {
+   width: 266px;
+
+   .calendar-header {
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    padding: 0 5px;
+
+    button {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+
+     &.header-button-prev {
+      left: 5px;
+     }
+
+     &.header-button-next {
+      right: 5px;
+      left: auto;
+     }
+    }
+   }
+
+   .calendar-days {
+    padding: 0 5px;
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    column-gap: 10px;
+
+    .day {
+     width: 28px;
+     height: 20px;
+     font-size: 12px;
+     line-height: 20px;
+     text-align: center;
+     color: $grey_65;
+    }
+   }
+
+   .calendar-body {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+   }
+  }
+  .separator {
+   width: 1px;
+   background-color: $grey_35;
+  }
+ }
+}

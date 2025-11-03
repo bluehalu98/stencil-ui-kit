@@ -1,0 +1,66 @@
+@import 'global.scss';
+
+.sd-input {
+ display: flex;
+ width: var(--input-width, 100%);
+ align-items: center;
+ height: 28px;
+ padding: 4px 8px;
+ border: 1px solid $grey_55;
+ border-radius: 4px;
+ color: $grey_90;
+ font-size: 12px;
+ line-height: 20px;
+ background: white;
+
+ &--hovered,
+ &--focused {
+  border-color: $brilliantblue_75;
+  box-shadow: 0 0 4px 0 #0071ff66;
+ }
+
+ &.sd-input--error {
+  border-color: $red_70;
+ }
+
+ &.sd-input--pass {
+  border-color: $green_65;
+ }
+
+ &.sd-input--barcode:not(.sd-input--disabled) {
+  background-color: $olive_15;
+ }
+
+ &.sd-input--disabled {
+  background-color: $grey_20 !important;
+  border-color: $grey_45 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  .sd-input__native_element {
+   color: $grey_65 !important;
+  }
+ }
+
+ .sd-input__native_element {
+  display: block;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: inherit;
+  color: $grey_90;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-block: 0;
+  padding-inline: 0;
+
+  &::placeholder {
+   font-size: 12px;
+   height: 20px;
+   line-height: 20px;
+   color: $grey_55;
+  }
+ }
+}

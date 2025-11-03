@@ -1,0 +1,91 @@
+@import '../../styles/variables.scss';
+
+:host {
+ line-height: 0;
+}
+
+.sd-checkbox {
+ line-height: 0;
+
+ cursor: pointer;
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ height: 20px;
+ max-height: 20px;
+ position: relative;
+ cursor: pointer;
+
+ > input {
+  display: none;
+ }
+
+ &:hover {
+  &.sd-checkbox--checked {
+   .sd-checkbox__bg {
+    background: $brilliantblue_80;
+   }
+  }
+
+  &.sd-checkbox--unchecked {
+   .sd-checkbox__bg {
+    border: 1px solid $brilliantblue_75;
+    background: $brilliantblue_25;
+   }
+  }
+
+  &.sd-checkbox--disabled {
+   .sd-checkbox__bg {
+    border: 1px solid transparent;
+    background: $grey_20;
+   }
+  }
+ }
+
+ &__bg {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid $grey_65;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  line-height: 0;
+ }
+
+ &__label {
+  font-size: 12px;
+  color: $grey_90;
+  line-height: 20px;
+ }
+
+ &--checked {
+  &.sd-checkbox--disabled {
+   .sd-checkbox__bg {
+    background: $grey_20;
+    border: 1px solid $grey_45 !important;
+   }
+  }
+
+  .sd-checkbox__bg {
+   border: 0;
+   background: $brilliantblue_75;
+  }
+ }
+
+ &--unchecked {
+  .sd-checkbox__bg {
+   background: white;
+  }
+ }
+
+ &--disabled {
+  cursor: not-allowed;
+  .sd-checkbox__bg {
+   background: $grey_20;
+   border: 1px solid $grey_45 !important;
+  }
+ }
+}
