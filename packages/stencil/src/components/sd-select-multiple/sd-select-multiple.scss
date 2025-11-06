@@ -1,0 +1,134 @@
+@import 'global';
+
+:host {
+ display: flex;
+ width: var(--select-width, 200px);
+ height: 28px;
+ position: relative;
+}
+
+.sd-select-multiple {
+ display: flex;
+ flex-wrap: nowrap;
+ width: 100%;
+ cursor: pointer;
+ user-select: none;
+ border: 1px solid $grey_55;
+ border-radius: 4px;
+ background-color: $white;
+
+ &:hover:not(.sd-select-multiple--disabled) {
+  background: $grey_10;
+ }
+
+ &.sd-select-multiple--disabled {
+  cursor: not-allowed;
+  background-color: $grey_20;
+  border-color: $grey_45;
+
+  .sd-select-multiple__label {
+   border-right: 1px solid $grey_45;
+  }
+
+  .sd-select-multiple__trigger {
+   color: $grey_65;
+   &:focus,
+   &:focus-visible,
+   &:focus-within {
+    outline: none !important;
+   }
+  }
+ }
+
+ &__label {
+  font-size: 12px;
+  font-weight: 500;
+  color: $grey_90;
+  padding: 4px 12px;
+  border-right: 1px solid $grey_45;
+  border-radius: 4px 0 0 4px;
+  background-color: $grey_10;
+ }
+
+ &__container {
+  position: relative;
+  width: 100%;
+  display: flex;
+
+  .sd-select-multiple__trigger {
+   padding: 4px 20px 4px 12px;
+   display: flex;
+   width: 100%;
+   align-items: center;
+
+   .sd-select-multiple__value {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 400;
+   }
+
+   .sd-select-multiple__clear {
+    margin: 0 4px;
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+   }
+  }
+
+  .sd-select-multiple__arrow {
+   position: absolute;
+   top: 8px;
+   right: 8px;
+   width: 12px;
+   height: 12px;
+   color: $grey_65;
+   transition: transform 0.3s ease;
+
+   &--open {
+    transform: rotate(180deg);
+   }
+  }
+
+  .sd-select-multiple__dropdown {
+   @extend %scrollBar;
+   position: absolute;
+   width: 100%;
+   max-height: var(--select-dropdown-height, 260px);
+   top: calc(100% + 4px);
+   left: 0;
+   padding-bottom: 2px;
+   background-color: $white;
+   box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0.1);
+   border-radius: 4px;
+   z-index: 1000;
+   overflow-y: auto;
+
+   .sd-select-multiple__search-container {
+    position: sticky;
+    top: 0;
+    display: flex;
+    width: 100%;
+    background-color: $white;
+    align-items: center;
+    padding: 4px 8px;
+    z-index: 1;
+
+    &--scrolled {
+     box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.2);
+    }
+   }
+
+   .sd-select-multiple__option-placeholder {
+    padding: 4px 12px;
+    font-size: 12px;
+    line-height: 20px;
+   }
+  }
+ }
+}

@@ -1,0 +1,64 @@
+@import 'global';
+
+.sd-select__option {
+ display: flex;
+ padding: 4px 12px;
+ padding-left: 28px;
+ font-size: 12px;
+ line-height: 20px;
+
+ &.sd-select__option--group,
+ &.sd-select__option--subgroup {
+  &:not(.sd-select__option--use-checkbox) {
+   cursor: default;
+  }
+ }
+
+ &.sd-select__option--group {
+  padding-left: 12px;
+  background-color: $brilliantblue_05 !important;
+  color: $grey_90 !important;
+  font-weight: 700;
+ }
+
+ &.sd-select__option--subgroup {
+  padding-left: 20px;
+  background-color: $grey_05 !important;
+  color: $grey_90 !important;
+  font-weight: 500;
+ }
+
+ &__checkbox-wrapper {
+  display: flex;
+  width: 100%;
+  column-gap: 8px;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+ }
+
+ &--focused {
+  background-color: $brilliantblue_20;
+ }
+
+ &--selected,
+ &--focused {
+  &:not(:hover):not(.sd-select__option--use-checkbox) {
+   color: $brilliantblue_75;
+   font-weight: 700;
+  }
+ }
+
+ &--disabled {
+  color: $grey_55;
+  cursor: not-allowed;
+ }
+
+ &:hover {
+  &:not(.sd-select__option--disabled) {
+   background-color: $brilliantblue_75;
+   color: $white;
+  }
+ }
+}
