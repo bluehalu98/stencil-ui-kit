@@ -28,6 +28,7 @@
 ### Used by
 
  - [sd-select-option](../sd-select/sd-select-option)
+ - [sd-select-option-group](../sd-select-group/sd-select-item-group)
  - [sd-table](../sd-table)
 
 ### Depends on
@@ -39,6 +40,7 @@
 graph TD;
   sd-checkbox --> sd-icon
   sd-select-option --> sd-checkbox
+  sd-select-option-group --> sd-checkbox
   sd-table --> sd-checkbox
   style sd-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```

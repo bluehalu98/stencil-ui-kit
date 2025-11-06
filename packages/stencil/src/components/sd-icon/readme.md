@@ -26,6 +26,8 @@
  - [sd-pagination](../sd-pagination)
  - [sd-popover](../sd-popover)
  - [sd-select](../sd-select)
+ - [sd-select-group](../sd-select-group)
+ - [sd-select-multiple](../sd-select-multiple)
  - [sd-table](../sd-table)
  - [sd-tooltip](../sd-tooltip)
 
@@ -40,6 +42,8 @@ graph TD;
   sd-pagination --> sd-icon
   sd-popover --> sd-icon
   sd-select --> sd-icon
+  sd-select-group --> sd-icon
+  sd-select-multiple --> sd-icon
   sd-table --> sd-icon
   sd-tooltip --> sd-icon
   style sd-icon fill:#f9f,stroke:#333,stroke-width:4px

@@ -53,6 +53,8 @@ Type: `Promise<HTMLInputElement | null>`
  - [sd-date-picker](../sd-date-picker)
  - [sd-date-range-picker](../sd-date-range-picker)
  - [sd-select](../sd-select)
+ - [sd-select-group](../sd-select-group)
+ - [sd-select-multiple](../sd-select-multiple)
 
 ### Depends on
 
@@ -65,6 +67,8 @@ graph TD;
   sd-date-picker --> sd-input
   sd-date-range-picker --> sd-input
   sd-select --> sd-input
+  sd-select-group --> sd-input
+  sd-select-multiple --> sd-input
   style sd-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

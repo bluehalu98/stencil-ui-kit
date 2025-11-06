@@ -1,4 +1,4 @@
-# sd-select-option
+# sd-select-option-group
 
 
 
@@ -13,16 +13,16 @@
 | `index` _(required)_  | `index`        |             | `number`                                  | `undefined` |
 | `isFocused`           | `is-focused`   |             | `boolean`                                 | `false`     |
 | `isSelected`          | `is-selected`  |             | `boolean`                                 | `false`     |
-| `option` _(required)_ | --             |             | `SelectOption`                            | `undefined` |
+| `option` _(required)_ | --             |             | `SelectOptionGroup`                       | `undefined` |
 | `optionStyle`         | --             |             | `undefined \| { [key: string]: string; }` | `undefined` |
 | `useCheckbox`         | `use-checkbox` |             | `boolean`                                 | `false`     |
 
 
 ## Events
 
-| Event         | Description | Type                                                                       |
-| ------------- | ----------- | -------------------------------------------------------------------------- |
-| `optionClick` |             | `CustomEvent<{ option: SelectOption; index: number; event: MouseEvent; }>` |
+| Event         | Description | Type                                                                            |
+| ------------- | ----------- | ------------------------------------------------------------------------------- |
+| `optionClick` |             | `CustomEvent<{ option: SelectOptionGroup; index: number; event: MouseEvent; }>` |
 
 
 ## Methods
@@ -42,8 +42,7 @@ Type: `Promise<boolean>`
 
 ### Used by
 
- - [sd-select](..)
- - [sd-select-multiple](../../sd-select-multiple)
+ - [sd-select-group](..)
 
 ### Depends on
 
@@ -52,11 +51,10 @@ Type: `Promise<boolean>`
 ### Graph
 ```mermaid
 graph TD;
-  sd-select-option --> sd-checkbox
+  sd-select-option-group --> sd-checkbox
   sd-checkbox --> sd-icon
-  sd-select --> sd-select-option
-  sd-select-multiple --> sd-select-option
-  style sd-select-option fill:#f9f,stroke:#333,stroke-width:4px
+  sd-select-group --> sd-select-option-group
+  style sd-select-option-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -11,7 +11,7 @@ import {
 } from '@stencil/core';
 import { BaseDropdownEvent } from '../base-dropdown-event';
 import { SelectEvents, SelectOption, SelectStyleProps } from '../../components';
-import { SelectKeyboardNavigation } from '../sd-select/select-keyboard-navigation';
+import { SelectKeyboardNavigation } from '../../utils/select-keyboard-navigation';
 import { SelectOptionGroup } from '../../types/select';
 
 @Component({

@@ -10,7 +10,7 @@ import {
  h,
 } from '@stencil/core';
 import type { SelectOption, SelectStyleProps, SelectMultipleEvents } from '../../types/select';
-import { SelectKeyboardNavigation } from '../sd-select/select-keyboard-navigation';
+import { SelectKeyboardNavigation } from '../../utils/select-keyboard-navigation';
 import { BaseDropdownEvent } from '../base-dropdown-event';
 
 @Component({
